@@ -1,3 +1,36 @@
 spring:
   application:
-    name: platform
+    name: padeltms-platform
+
+  profiles:
+    default: local
+
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/padeltms-db-repelentes}
+    username: ${DB_USER:padeltms}
+    password: ${DB_PASSWORD:padeltms}
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+
+  flyway:
+    enabled: true
+
+  threads:
+    virtual:
+      enabled: true
+
+server:
+  port: ${PORT:8080}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true
