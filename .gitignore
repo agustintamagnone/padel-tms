@@ -1,0 +1,20 @@
+# Java / Gradle
+backend/build/
+backend/.gradle/
+backend/bin/
+backend/config/
+*.class
+
+# Node / Next (frontend/.gitignore ya cubre lo suyo)
+node_modules/
+
+# Entorno
+.env
+.env.local
+*.local
+
+# IDE / OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
